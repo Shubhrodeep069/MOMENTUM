@@ -139,6 +139,32 @@ export default {
 						strokeDasharray: '283 283',
 						transform: 'rotate(270deg)'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-6px)'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-200% 0'
+					},
+					'100%': {
+						backgroundPosition: '200% 0'
+					}
+				},
+				'bounce-gentle': {
+					'0%, 100%': {
+						transform: 'translateY(0)',
+						animationTimingFunction: 'cubic-bezier(0,0,0.2,1)'
+					},
+					'50%': {
+						transform: 'translateY(-4px)',
+						animationTimingFunction: 'cubic-bezier(0.8,0,1,1)'
+					}
 				}
 			},
 			animation: {
@@ -147,7 +173,10 @@ export default {
 				'fade-in': 'fade-in 0.3s ease-out',
 				'scale-in': 'scale-in 0.2s ease-out',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-				'progress': 'progress 1s ease-out'
+				'progress': 'progress 1s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'shimmer': 'shimmer 2s linear infinite',
+				'bounce-gentle': 'bounce-gentle 2s infinite'
 			},
 			backgroundImage: {
 				'gradient-focus': 'var(--gradient-focus)',
@@ -159,7 +188,10 @@ export default {
 				'pomodoro-sm': 'var(--shadow-sm)',
 				'pomodoro-md': 'var(--shadow-md)',
 				'pomodoro-lg': 'var(--shadow-lg)',
-				'pomodoro-glow': 'var(--shadow-glow)'
+				'pomodoro-glow': 'var(--shadow-glow)',
+				'focus-glow': 'var(--shadow-focus)',
+				'short-break-glow': 'var(--shadow-short-break)',
+				'long-break-glow': 'var(--shadow-long-break)'
 			}
 		}
 	},

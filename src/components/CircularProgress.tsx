@@ -36,15 +36,15 @@ export const CircularProgress: React.FC<CircularProgressProps> = ({
   const getGradientId = () => `gradient-${sessionType}`;
 
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center group">
       <svg
         width={size}
         height={size}
         className={cn(
-          "transform -rotate-90 transition-all duration-500",
-          sessionType === 'focus' && "drop-shadow-lg",
-          sessionType === 'short-break' && "drop-shadow-lg",
-          sessionType === 'long-break' && "drop-shadow-lg"
+          "transform -rotate-90 transition-all duration-500 hover:scale-105",
+          sessionType === 'focus' && "drop-shadow-lg hover:drop-shadow-2xl",
+          sessionType === 'short-break' && "drop-shadow-lg hover:drop-shadow-2xl",
+          sessionType === 'long-break' && "drop-shadow-lg hover:drop-shadow-2xl"
         )}
       >
         <defs>
@@ -93,7 +93,7 @@ export const CircularProgress: React.FC<CircularProgressProps> = ({
           strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
-          className="transition-all duration-500 ease-out"
+          className="transition-all duration-500 ease-out group-hover:brightness-110"
           filter="url(#glow)"
           style={{
             strokeDasharray: circumference,

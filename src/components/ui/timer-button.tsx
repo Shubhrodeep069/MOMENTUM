@@ -4,16 +4,16 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const timerButtonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-95",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-95 relative overflow-hidden group",
   {
     variants: {
       variant: {
-        primary: "bg-gradient-focus text-white shadow-pomodoro-md hover:shadow-pomodoro-lg hover:scale-105",
-        secondary: "bg-gradient-short-break text-white shadow-pomodoro-md hover:shadow-pomodoro-lg hover:scale-105",
-        tertiary: "bg-gradient-long-break text-white shadow-pomodoro-md hover:shadow-pomodoro-lg hover:scale-105",
-        outline: "border-2 border-border bg-card text-card-foreground shadow-pomodoro-sm hover:bg-accent hover:shadow-pomodoro-md hover:scale-105",
-        ghost: "text-foreground hover:bg-accent hover:text-accent-foreground hover:scale-105",
-        destructive: "bg-destructive text-destructive-foreground shadow-pomodoro-sm hover:bg-destructive/90 hover:shadow-pomodoro-md hover:scale-105",
+        primary: "bg-gradient-focus text-white shadow-pomodoro-md hover:shadow-focus-glow hover:scale-105 hover:-translate-y-1 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700",
+        secondary: "bg-gradient-short-break text-white shadow-pomodoro-md hover:shadow-short-break-glow hover:scale-105 hover:-translate-y-1 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700",
+        tertiary: "bg-gradient-long-break text-white shadow-pomodoro-md hover:shadow-long-break-glow hover:scale-105 hover:-translate-y-1 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700",
+        outline: "border-2 border-border bg-card text-card-foreground shadow-pomodoro-sm hover:bg-accent hover:shadow-pomodoro-md hover:scale-105 hover:-translate-y-0.5 hover:border-primary/50",
+        ghost: "text-foreground hover:bg-accent hover:text-accent-foreground hover:scale-105 hover:-translate-y-0.5",
+        destructive: "bg-destructive text-destructive-foreground shadow-pomodoro-sm hover:bg-destructive/90 hover:shadow-pomodoro-md hover:scale-105 hover:-translate-y-0.5",
       },
       size: {
         default: "h-12 px-6 py-3",
