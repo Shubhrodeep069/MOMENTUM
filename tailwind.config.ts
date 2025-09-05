@@ -61,6 +61,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				pomodoro: {
+					focus: {
+						primary: 'hsl(var(--focus-primary))',
+						secondary: 'hsl(var(--focus-secondary))',
+						background: 'hsl(var(--focus-background))'
+					},
+					'short-break': {
+						primary: 'hsl(var(--short-break-primary))',
+						secondary: 'hsl(var(--short-break-secondary))',
+						background: 'hsl(var(--short-break-background))'
+					},
+					'long-break': {
+						primary: 'hsl(var(--long-break-primary))',
+						secondary: 'hsl(var(--long-break-secondary))',
+						background: 'hsl(var(--long-break-background))'
+					}
 				}
 			},
 			borderRadius: {
@@ -84,11 +101,65 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						transform: 'scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(var(--focus-primary), 0.4)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(var(--focus-primary), 0.6)'
+					}
+				},
+				'progress': {
+					'0%': {
+						strokeDasharray: '0 283',
+						transform: 'rotate(-90deg)'
+					},
+					'100%': {
+						strokeDasharray: '283 283',
+						transform: 'rotate(270deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'scale-in': 'scale-in 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'progress': 'progress 1s ease-out'
+			},
+			backgroundImage: {
+				'gradient-focus': 'var(--gradient-focus)',
+				'gradient-short-break': 'var(--gradient-short-break)',
+				'gradient-long-break': 'var(--gradient-long-break)',
+				'gradient-subtle': 'var(--gradient-subtle)'
+			},
+			boxShadow: {
+				'pomodoro-sm': 'var(--shadow-sm)',
+				'pomodoro-md': 'var(--shadow-md)',
+				'pomodoro-lg': 'var(--shadow-lg)',
+				'pomodoro-glow': 'var(--shadow-glow)'
 			}
 		}
 	},
