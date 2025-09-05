@@ -82,10 +82,17 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ onSessionComplete 
 
   return (
     <div className={cn(
-      'min-h-screen transition-all duration-500 flex items-center justify-center p-4',
+      'min-h-screen transition-all duration-500 flex items-center justify-center p-4 bg-gradient-texture relative overflow-hidden',
       getBackgroundClass()
     )}>
-      <div className="w-full max-w-md mx-auto">
+      {/* Animated background texture overlay */}
+      <div className="absolute inset-0 bg-gradient-main opacity-80" />
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-radial from-primary/10 to-transparent rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-radial from-accent/10 to-transparent rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-radial from-short-break-primary/20 to-transparent rounded-full blur-2xl animate-bounce-gentle" />
+      </div>
+      <div className="w-full max-w-md mx-auto relative z-10">
         {/* Session Type Selector */}
         <div className="flex justify-center gap-2 mb-8 animate-fade-in">
           <Badge 
@@ -124,7 +131,10 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ onSessionComplete 
         </div>
 
         {/* Main Timer Card */}
-        <Card className="p-8 shadow-pomodoro-lg bg-card/80 backdrop-blur-sm border-0 transition-all duration-500 hover:shadow-pomodoro-glow hover:scale-[1.02] animate-scale-in">
+        <Card className="p-8 shadow-neon bg-gradient-card backdrop-blur-xl border border-primary/20 transition-all duration-500 hover:shadow-focus-glow hover:scale-[1.02] hover:border-primary/40 animate-scale-in relative overflow-hidden">
+          {/* Card texture overlay */}
+          <div className="absolute inset-0 bg-gradient-subtle opacity-30" />
+          <div className="relative z-10">
           <div className="text-center space-y-6">
             {/* Session Info */}
             <div className="space-y-2 animate-fade-in">
@@ -217,6 +227,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ onSessionComplete 
                 <div className="transition-colors duration-300 group-hover:text-foreground">Cycles</div>
               </div>
             </div>
+          </div>
           </div>
         </Card>
       </div>

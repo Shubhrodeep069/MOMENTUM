@@ -182,7 +182,10 @@ export default {
 				'gradient-focus': 'var(--gradient-focus)',
 				'gradient-short-break': 'var(--gradient-short-break)',
 				'gradient-long-break': 'var(--gradient-long-break)',
-				'gradient-subtle': 'var(--gradient-subtle)'
+				'gradient-subtle': 'var(--gradient-subtle)',
+				'gradient-main': 'var(--gradient-main)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-texture': 'var(--gradient-texture)'
 			},
 			boxShadow: {
 				'pomodoro-sm': 'var(--shadow-sm)',
@@ -191,7 +194,8 @@ export default {
 				'pomodoro-glow': 'var(--shadow-glow)',
 				'focus-glow': 'var(--shadow-focus)',
 				'short-break-glow': 'var(--shadow-short-break)',
-				'long-break-glow': 'var(--shadow-long-break)'
+				'long-break-glow': 'var(--shadow-long-break)',
+				'neon': 'var(--shadow-neon)'
 			}
 		}
 	},
